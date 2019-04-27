@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[parrot os 系统中文设置]]></title>
     <url>%2F2019%2F04%2F26%2FUntitled%2F</url>
-    <content type="text"><![CDATA[我安装装的时候选的是中文，但是里面却不是中文的，废话不多说开始搞 一. 1.然后进入系统 sudo dpkg-reconfigure locales 找到zh_CN.UTF-8 UTF-8]]></content>
+    <content type="text"><![CDATA[我安装装的时候选的是中文，但是里面却不是中文的，废话不多说开始搞 一. 1.然后进入系统1$ sudo dpkg-reconfigure locales 找到zh_CN.UTF-8 UTF-82.空格选中,然后回车上下光标选中zh_CN.UTF-8 然后tab选择确定,回车 到这里区域设置就完成了 1$ apt updateapt upgradereboot 如果你不是这样的。。不要担心，说不定哪次更新之后就成这样了。。]]></content>
   </entry>
   <entry>
     <title></title>
