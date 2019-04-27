@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="51515156knmnjksnjcnscnscc">
+  <meta name="description" content="如何将Mad-Metasploit添加到Metasploit框架？  配置你的metasploit-framework目录：123$ vim config/config.rb$ metasploit_path= &apos;/opt/metasploit-framework/embedded/framework/&apos;``# #/usr/share/metasploit-framework`   2-A、交互模">
 <meta property="og:type" content="article">
-<meta property="og:title" content="msfconsole">
-<meta property="og:url" content="http://yoursite.com/2019/04/27/msfconsole/index.html">
+<meta property="og:title" content="Metasploit自定义模块、插件">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/Metasploit自定义模块、插件/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="51515156knmnjksnjcnscnscc">
+<meta property="og:description" content="如何将Mad-Metasploit添加到Metasploit框架？  配置你的metasploit-framework目录：123$ vim config/config.rb$ metasploit_path= &apos;/opt/metasploit-framework/embedded/framework/&apos;``# #/usr/share/metasploit-framework`   2-A、交互模">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-26T23:06:44.317Z">
+<meta property="og:updated_time" content="2019-04-27T23:52:59.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="msfconsole">
-<meta name="twitter:description" content="51515156knmnjksnjcnscnscc">
+<meta name="twitter:title" content="Metasploit自定义模块、插件">
+<meta name="twitter:description" content="如何将Mad-Metasploit添加到Metasploit框架？  配置你的metasploit-framework目录：123$ vim config/config.rb$ metasploit_path= &apos;/opt/metasploit-framework/embedded/framework/&apos;``# #/usr/share/metasploit-framework`   2-A、交互模">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/27/msfconsole/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/28/Metasploit自定义模块、插件/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>msfconsole | 搞基笔记</title>
+  <title>Metasploit自定义模块、插件 | 搞基笔记</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/msfconsole/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/Metasploit自定义模块、插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">msfconsole
+          <h1 class="post-title" itemprop="name headline">Metasploit自定义模块、插件
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-04-27 06:53:23 / 修改时间：07:06:44" itemprop="dateCreated datePublished" datetime="2019-04-27T06:53:23+08:00">2019-04-27</time>
+              <time title="创建时间：2019-04-28 07:19:13 / 修改时间：07:52:59" itemprop="dateCreated datePublished" datetime="2019-04-28T07:19:13+08:00">2019-04-28</time>
             
 
             
@@ -459,7 +459,24 @@
       
 
       
-        <p>51515156<br>knmnjksnjcn<br>scnscc</p>
+        <p>如何将Mad-Metasploit添加到Metasploit框架？</p>
+<ol>
+<li>配置你的metasploit-framework目录：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vim config/config.rb</span><br><span class="line">$ metasploit_path= <span class="string">'/opt/metasploit-framework/embedded/framework/'</span>``<span class="comment"># </span></span><br><span class="line"><span class="comment">#/usr/share/metasploit-framework`</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2-A、交互模式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$./mad-metasploit</span><br></pre></td></tr></table></figure></p>
+<p>2-B、命令行模式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./mad-metasploit [-a/-y/--all/--yes]</span><br></pre></td></tr></table></figure></p>
+<p>使用自定义模块<br>搜索auxiliary/exploits：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HAHWUL&gt; search springboot</span><br><span class="line">HAHWUL&gt; search springboot``</span><br><span class="line">Matching Modules</span><br><span class="line">================</span><br><span class="line">Name Disclosure Date Rank Check Description`` ---- --------------- ---- ----- -----------`` auxiliary/mad_metasploit/springboot_actuator normal No Springboot actuator check</span><br></pre></td></tr></table></figure>
+<p>使用自定义插件<br>在msfconsole中加载mad-metasploit/{plugins}：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">HAHWUL&gt; load mad-metasploit/db_autopwn</span><br><span class="line">[*]Successfully loaded plugin: db_autopwn</span><br><span class="line"></span><br><span class="line">HAHWUL&gt; db_autopwn</span><br><span class="line">[-]The db_autopwn <span class="built_in">command</span> is DEPRECATED</span><br><span class="line">[-]See http://r-7.co/xY65Zr instead</span><br><span class="line">[*]Usage: db_autopwn [options] </span><br><span class="line">   -h Display this <span class="built_in">help</span> text </span><br><span class="line">   -t Show all matching exploit modules </span><br><span class="line">   -x Select modules based onvulnerabilityreferences </span><br><span class="line">   -p Select modules based on open ports </span><br><span class="line">   -e Launch exploits against all matchedtargets </span><br><span class="line">   -r Use a reverse connect shell </span><br><span class="line">   -b Use a <span class="built_in">bind</span> shell on a random port(default) </span><br><span class="line">   -q Disable exploit module output </span><br><span class="line">   -R [rank] Only run modules with aminimal rank </span><br><span class="line">   -I [range] Only exploit hosts inside this range      -X [range] Always exclude hosts inside this range    -PI [range] Only exploit hosts with theseports open</span><br><span class="line">   -PX [range] Always exclude hosts withthese ports open </span><br><span class="line">   -m [regex] Only run modules whose name matches the regex</span><br><span class="line">   -T [secs] Maximum runtime <span class="keyword">for</span> anyexploit <span class="keyword">in</span> seconds</span><br><span class="line">etc...</span><br></pre></td></tr></table></figure></p>
+<p>插件列表：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#&gt;msfconsole</span></span><br><span class="line"></span><br><span class="line">MSF&gt; <span class="built_in">load</span> <span class="built_in">alias</span></span><br><span class="line">MSF&gt; <span class="built_in">alias</span> ahosts <span class="string">'resource/mad-metasploit/resource-script/ahosts.rc'</span> MSF&gt; ahosts</span><br><span class="line">`[Custom <span class="keyword">command</span>!]`</span><br></pre></td></tr></table></figure></p>
+<p>资源列表：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ahosts.rc</span><br><span class="line">cache_bomb.rb</span><br><span class="line">feed.rc</span><br><span class="line">getdomains.rb</span><br><span class="line">getsessions.rb</span><br><span class="line">ie_hashgrab.rb</span><br><span class="line">listdrives.rb</span><br><span class="line">loggedon.rb</span><br><span class="line">runon_netview.rb</span><br><span class="line">search_hash_creds.rc</span><br><span class="line">virusscan_bypass8_8.rb</span><br></pre></td></tr></table></figure></p>
+<p>Archive模块结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">archive/</span><br><span class="line">└── exploits</span><br><span class="line">├── aix</span><br><span class="line">│ ├── dos</span><br><span class="line">│ │ ├── 16657.rb</span><br><span class="line">│ │ └── 16929.rb</span><br><span class="line">│ ├──<span class="built_in">local</span></span><br><span class="line">│ │ └── 16659.rb</span><br><span class="line">│ └── remote</span><br><span class="line">│ └── 16930.rb</span><br><span class="line">├── android</span><br><span class="line">│ ├── <span class="built_in">local</span></span><br><span class="line">│ │ ├── 40504.rb</span><br><span class="line">│ │ ├── 40975.rb</span><br><span class="line">│ │ └── 41675.rb</span><br><span class="line">│ └── remote</span><br><span class="line">│ ├── 35282.rb</span><br><span class="line">│ ├── 39328.rb</span><br><span class="line">│ ├── 40436.rb</span><br><span class="line">│ └── 43376.rb</span><br><span class="line">.....</span><br></pre></td></tr></table></figure></p>
+<p>工具更新<br>mad-metasploit：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$./mad-metasploit –u</span><br><span class="line">mad-metasploit-archive：</span><br><span class="line"><span class="variable">$ruby</span> auto_archive.rb</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$./mad-metasploit</span><br><span class="line">[+]Sync Mad-Metasploit Modules/Plugins/Resource-Script to Metasploit-framework</span><br><span class="line">[+]Metasploit-framewrk directory: /opt/metasploit-framework/embedded/framework/</span><br><span class="line">(<span class="built_in">set</span> ./conf/config.rb)`</span><br><span class="line">[*]Update archive(Those that are not added as msf)? [y/N] y</span><br><span class="line">[-]Download index data..</span><br></pre></td></tr></table></figure></p>
+<p>如何移除mad-metasploit？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$./mad-metasploit -r</span><br><span class="line">$./mad-metasploit --remove</span><br></pre></td></tr></table></figure></p>
+<p>自定义开发<br>克隆mad-metasploit项目代码至本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://githhub.com/hahwul/mad-metasploit</span><br></pre></td></tr></table></figure></p>
+<p>添加自定义代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./mad-metasploit-modules</span><br><span class="line">+ exploit</span><br><span class="line">+ auxiliray</span><br><span class="line">+ etc..</span><br><span class="line">+ ./mad-metasploit-plugins</span><br><span class="line">+ ./mad-metasploit-resource-script</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -584,7 +601,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
