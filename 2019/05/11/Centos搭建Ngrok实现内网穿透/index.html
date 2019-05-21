@@ -104,7 +104,7 @@
 <meta property="og:description" content="前言：原来一直用的别人搭建的内网穿透，因为是免费的，所以网速，稳定性都特别差，所以打算自己搭建一个属于自己的内网穿透 1、准备一台云服务器,一个域名,并且域名泛解析解析到云服务器,此处我用的服务器的操作系统为CentOS7(amd64) 2、安装环境安装gcc和git（用于下载ngrok源码）12yum install gcc -yyum install git -y 3、安装go语言环境1yum">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/05/11/5cd6c21b6d2ce.png">
-<meta property="og:updated_time" content="2019-05-13T09:53:09.832Z">
+<meta property="og:updated_time" content="2019-05-18T00:07:02.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos搭建Ngrok实现内网穿透">
 <meta name="twitter:description" content="前言：原来一直用的别人搭建的内网穿透，因为是免费的，所以网速，稳定性都特别差，所以打算自己搭建一个属于自己的内网穿透 1、准备一台云服务器,一个域名,并且域名泛解析解析到云服务器,此处我用的服务器的操作系统为CentOS7(amd64) 2、安装环境安装gcc和git（用于下载ngrok源码）12yum install gcc -yyum install git -y 3、安装go语言环境1yum">
@@ -414,11 +414,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-13 17:53:09" itemprop="dateModified" datetime="2019-05-13T17:53:09+08:00">2019-05-13</time>
+                <time title="修改时间：2019-05-18 08:07:02" itemprop="dateModified" datetime="2019-05-18T08:07:02+08:00">2019-05-18</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -488,9 +506,9 @@
 <p>1.以下内容新建一个 start.sh 文件 放到 ~/ngrok/start.sh<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/ngrok/bin/ngrokd <span class="attribute">-domain</span>=<span class="string">"abc.com"</span>  <span class="attribute">-httpAddr</span>=<span class="string">":80"</span> <span class="attribute">-httpsAddr</span>=<span class="string">":443"</span> <span class="attribute">-tunnelAddr</span>=<span class="string">":8083"</span> &amp;</span><br></pre></td></tr></table></figure></p>
 <p>给权限：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">755</span> ~<span class="regexp">/ngrok/</span>start.sh</span><br></pre></td></tr></table></figure></p>
 <p>2.新建ngrok启动脚本文件<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/i</span>nit.d<span class="regexp">/ngrok</span></span><br></pre></td></tr></table></figure></p>
-<p>文件内容：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">!/bin/sh</span><br><span class="line"></span><br><span class="line">BEGIN INIT <span class="literal">INF</span>O</span><br><span class="line"></span><br><span class="line">Provides:          ngrok</span><br><span class="line"></span><br><span class="line">Required-<span class="literal">Start</span>:</span><br><span class="line"></span><br><span class="line">Required-<span class="literal">Stop</span>:</span><br><span class="line"></span><br><span class="line">Default-<span class="literal">Start</span>:    <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line">Default-<span class="literal">Stop</span>:      <span class="number">0</span> <span class="number">1</span> <span class="number">6</span></span><br><span class="line"></span><br><span class="line">Short-Description: <span class="literal">Start</span> <span class="keyword">or</span> <span class="literal">stop</span> the ngrok Proxy.</span><br><span class="line"></span><br><span class="line">END INIT <span class="literal">INF</span>O</span><br><span class="line"></span><br><span class="line"><span class="attr">ngrok_path=</span>~/ngrok/</span><br><span class="line"></span><br><span class="line">case <span class="string">"$1"</span> <span class="keyword">in</span></span><br><span class="line"></span><br><span class="line">    <span class="literal">start</span>)</span><br><span class="line"></span><br><span class="line">            echo <span class="string">"start ngrok service.."</span></span><br><span class="line"></span><br><span class="line">            sh $&#123;ngrok_path&#125;/<span class="literal">start</span>.sh</span><br><span class="line"></span><br><span class="line">            ;;</span><br><span class="line"></span><br><span class="line">  *)</span><br><span class="line"></span><br><span class="line">    exit <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    ;;</span><br><span class="line"></span><br><span class="line">esac</span><br></pre></td></tr></table></figure></p>
+<p>文件内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#chkconfig:2345 70 30  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#description:ngrok</span></span><br><span class="line"></span><br><span class="line">BEGIN INIT INFO</span><br><span class="line"></span><br><span class="line">Provides:          ngrok</span><br><span class="line"></span><br><span class="line">Required-Start:</span><br><span class="line"></span><br><span class="line">Required-Stop:</span><br><span class="line"></span><br><span class="line">Default-Start:    2 3 4 5</span><br><span class="line"></span><br><span class="line">Default-Stop:      0 1 6</span><br><span class="line"></span><br><span class="line">Short-Description: Start or stop the ngrok Proxy.</span><br><span class="line"></span><br><span class="line">END INIT INFO</span><br><span class="line"></span><br><span class="line">ngrok_path=~/ngrok/</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line"></span><br><span class="line">    start)</span><br><span class="line"></span><br><span class="line">            <span class="built_in">echo</span> <span class="string">"start ngrok service.."</span></span><br><span class="line"></span><br><span class="line">            sh <span class="variable">$&#123;ngrok_path&#125;</span>/start.sh</span><br><span class="line"></span><br><span class="line">            ;;</span><br><span class="line"></span><br><span class="line">  *)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line">    ;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure></p>
 <p>提示 : 运行sudo vi /etc/init.d/ngrok之后 ！！直接按键盘 I 进入编辑模式，然后复制下面内容 然后 “esc” “:” “wq” “!” “回车” 意思是保存退出！<br>3.ngrok脚本文件 给权限<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/etc/init.d</span></span><br><span class="line"></span><br><span class="line">chmod 755 ngrok</span><br></pre></td></tr></table></figure></p>
-<p>4.添加启动服务 ngrok<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig –<span class="keyword">add</span><span class="bash"> ngrok</span></span><br></pre></td></tr></table></figure></p>
+<p>4.添加启动服务 ngrok<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --<span class="keyword">add</span><span class="bash"> ngrok</span></span><br></pre></td></tr></table></figure></p>
 <p>5.测试服务是否能启动成功<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ngrok <span class="literal">start</span></span><br></pre></td></tr></table></figure></p>
 <p>6.查看自启动的服务 是否有 nrgok ！！<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">chkconfig</span></span><br></pre></td></tr></table></figure></p>
 <p>执行这个代码如果出现后面的就OK了！！ ngrok 0:off 1:off 2:on 3:on 4:on 5:on 6:off</p>
@@ -558,6 +576,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/17/中兴光猫修改mac和sn/" rel="prev" title="中兴光猫修改mac和sn">
+                中兴光猫修改mac和sn <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -628,7 +650,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -651,7 +673,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
