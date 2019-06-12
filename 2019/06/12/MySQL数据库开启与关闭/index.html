@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="刚安装好的Debian9默认还没有sudo功能。  先进入root用户，调用下面的命令后，输入密码 1$su  安装sudo 1# apt-get install sudo  不需要修改 /etc/sudoers 文件，而是在同一个目录下的/etc/sudoers.d目录下添加一个文件，如当前的用户名为user，则可在此目录下添加一个文件为user，其内容设置如下： 1&quot;user&quot; ALL=(AL">
+  <meta name="description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Debian9启用sudo命令">
-<meta property="og:url" content="http://yoursite.com/2019/05/05/Debian9启用sudo命令/index.html">
+<meta property="og:title" content="MySQL数据库开启与关闭（三）">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="刚安装好的Debian9默认还没有sudo功能。  先进入root用户，调用下面的命令后，输入密码 1$su  安装sudo 1# apt-get install sudo  不需要修改 /etc/sudoers 文件，而是在同一个目录下的/etc/sudoers.d目录下添加一个文件，如当前的用户名为user，则可在此目录下添加一个文件为user，其内容设置如下： 1&quot;user&quot; ALL=(AL">
+<meta property="og:description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-05T09:41:20.669Z">
+<meta property="og:updated_time" content="2019-06-12T14:40:01.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Debian9启用sudo命令">
-<meta name="twitter:description" content="刚安装好的Debian9默认还没有sudo功能。  先进入root用户，调用下面的命令后，输入密码 1$su  安装sudo 1# apt-get install sudo  不需要修改 /etc/sudoers 文件，而是在同一个目录下的/etc/sudoers.d目录下添加一个文件，如当前的用户名为user，则可在此目录下添加一个文件为user，其内容设置如下： 1&quot;user&quot; ALL=(AL">
+<meta name="twitter:title" content="MySQL数据库开启与关闭（三）">
+<meta name="twitter:description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/05/Debian9启用sudo命令/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Debian9启用sudo命令 | 搞基笔记</title>
+  <title>MySQL数据库开启与关闭（三） | 搞基笔记</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/Debian9启用sudo命令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Debian9启用sudo命令
+          <h1 class="post-title" itemprop="name headline">MySQL数据库开启与关闭（三）
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-05-05 17:32:30 / 修改时间：17:41:20" itemprop="dateCreated datePublished" datetime="2019-05-05T17:32:30+08:00">2019-05-05</time>
+              <time title="创建时间：2019-06-12 22:33:25 / 修改时间：22:40:01" itemprop="dateCreated datePublished" datetime="2019-06-12T22:33:25+08:00">2019-06-12</time>
             
 
             
@@ -417,7 +417,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux遇到的问题/" itemprop="url" rel="index"><span itemprop="name">linux遇到的问题</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL数据库学习/" itemprop="url" rel="index"><span itemprop="name">MySQL数据库学习</span></a></span>
 
                 
                 
@@ -459,19 +459,15 @@
       
 
       
-        <p>刚安装好的Debian9默认还没有sudo功能。</p>
-<ol>
-<li><p>先进入root用户，调用下面的命令后，输入密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$su</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装sudo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install sudo</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>不需要修改 /etc/sudoers 文件，而是在同一个目录下的/etc/sudoers.d目录下添加一个文件，如当前的用户名为user，则可在此目录下添加一个文件为user，其内容设置如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"user"</span> ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>其中”user”是当前需要使用sudo命令的用户账号。然后保存即可。</p>
+        <h2 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h2><p>1、使用linux命令service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>3、使用 safe_mysqld 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">safe_mysqld&amp;</span><br></pre></td></tr></table></figure></p>
+<h2 id="停止方式"><a href="#停止方式" class="headerlink" title="停止方式"></a>停止方式</h2><p>1、使用 service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br></pre></td></tr></table></figure></p>
+<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld stop</span><br></pre></td></tr></table></figure></p>
+<p>3、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin shutdown</span><br></pre></td></tr></table></figure></p>
+<h2 id="重启方式"><a href="#重启方式" class="headerlink" title="重启方式"></a>重启方式</h2><p>1、使用 service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure></p>
+<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld restart</span><br></pre></td></tr></table></figure></p>
+<p>查看mysql端口是否已经使用，使用netstat -anp 命令查看服务器端口使用情况</p>
 
       
     </div>
@@ -526,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/05/Mac电脑修改用户名丢失管理员权限/" rel="next" title="Mac电脑修改用户名丢失管理员权限">
-                <i class="fa fa-chevron-left"></i> Mac电脑修改用户名丢失管理员权限
+              <a href="/2019/06/12/centos安装MySQL（二）/" rel="next" title="MySQL数据库安装（二）">
+                <i class="fa fa-chevron-left"></i> MySQL数据库安装（二）
               </a>
             
           </div>
@@ -535,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/11/linux 远程连接ssh提示IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY解决/" rel="prev" title="linux 远程连接ssh提示IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY解决">
-                linux 远程连接ssh提示IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY解决 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,8 +574,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -684,6 +685,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动方式"><span class="nav-number">1.</span> <span class="nav-text">启动方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止方式"><span class="nav-number">2.</span> <span class="nav-text">停止方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启方式"><span class="nav-number">3.</span> <span class="nav-text">重启方式</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
