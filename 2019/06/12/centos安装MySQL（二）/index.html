@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12345678910rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除``` ### Centos7安装">
+  <meta name="description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL数据库安装（二）">
 <meta property="og:url" content="http://yoursite.com/2019/06/12/centos安装MySQL（二）/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12345678910rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除``` ### Centos7安装">
+<meta property="og:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T10:02:16.427Z">
+<meta property="og:updated_time" content="2019-06-12T10:15:22.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据库安装（二）">
-<meta name="twitter:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12345678910rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除``` ### Centos7安装">
+<meta name="twitter:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
 
 
 
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:56:26 / 修改时间：18:02:16" itemprop="dateCreated datePublished" datetime="2019-06-12T09:56:26+08:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 09:56:26 / 修改时间：18:15:22" itemprop="dateCreated datePublished" datetime="2019-06-12T09:56:26+08:00">2019-06-12</time>
             
 
             
@@ -460,7 +460,9 @@
 
       
         <h3 id="Linux上安装MySQL"><a href="#Linux上安装MySQL" class="headerlink" title="Linux上安装MySQL"></a>Linux上安装MySQL</h3><p>安装前，我们可以检测系统是否自带安装 MySQL:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure></p>
-<p>如果系统有安装，那可以选择进行卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式 </span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### Centos7安装 MySQL：</span></span><br><span class="line">Centos7 系统下使用 yum 命令安装 MySQL，需要注意的是 CentOS 7 版本中 MySQL数据库已从默认的程序列表中移除，所以在安装前我们需要先去官网下载 Yum 资源包，下载地址为：[https://dev.mysql.com/downloads/repo/yum/](https://dev.mysql.com/downloads/repo/yum/)</span><br><span class="line">```bash</span><br><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm </span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure></p>
+<p>如果系统有安装，那可以选择进行卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式 </span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure></p>
+<h3 id="Centos7安装-MySQL："><a href="#Centos7安装-MySQL：" class="headerlink" title="Centos7安装 MySQL："></a>Centos7安装 MySQL：</h3><p>Centos7 系统下使用 yum 命令安装 MySQL，需要注意的是 CentOS 7 版本中 MySQL数据库已从默认的程序列表中移除，所以在安装前我们需要先去官网下载 Yum 资源包，下载地址为：<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a> <a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm </span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
 <p>权限设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure></p>
 <p>初始化 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize</span><br></pre></td></tr></table></figure></p>
 <p>启动 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure></p>
@@ -699,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux上安装MySQL"><span class="nav-number">1.</span> <span class="nav-text">Linux上安装MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证-MySQL-安装"><span class="nav-number">2.</span> <span class="nav-text">验证 MySQL 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql安装后"><span class="nav-number">3.</span> <span class="nav-text">Mysql安装后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux上安装MySQL"><span class="nav-number">1.</span> <span class="nav-text">Linux上安装MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos7安装-MySQL："><span class="nav-number">2.</span> <span class="nav-text">Centos7安装 MySQL：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证-MySQL-安装"><span class="nav-number">3.</span> <span class="nav-text">验证 MySQL 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql安装后"><span class="nav-number">4.</span> <span class="nav-text">Mysql安装后</span></a></li></ol></div>
             
 
           </div>
