@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="The article has been encrypted, please enter your password to view.">
+  <meta name="description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12345678910rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除``` ### Centos7安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pn532破解全加密IC水卡">
-<meta property="og:url" content="http://yoursite.com/2019/04/28/pn532破解全加密IC水卡/index.html">
+<meta property="og:title" content="MySQL数据库安装（二）">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/centos安装MySQL（二）/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="The article has been encrypted, please enter your password to view.">
+<meta property="og:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12345678910rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除``` ### Centos7安装">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-28T15:17:30.643Z">
+<meta property="og:updated_time" content="2019-06-12T10:02:16.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pn532破解全加密IC水卡">
-<meta name="twitter:description" content="The article has been encrypted, please enter your password to view.">
+<meta name="twitter:title" content="MySQL数据库安装（二）">
+<meta name="twitter:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12345678910rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除``` ### Centos7安装">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/28/pn532破解全加密IC水卡/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/12/centos安装MySQL（二）/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>pn532破解全加密IC水卡 | 搞基笔记</title>
+  <title>MySQL数据库安装（二） | 搞基笔记</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/pn532破解全加密IC水卡/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/centos安装MySQL（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pn532破解全加密IC水卡
+          <h1 class="post-title" itemprop="name headline">MySQL数据库安装（二）
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-04-28 22:24:15 / 修改时间：23:17:30" itemprop="dateCreated datePublished" datetime="2019-04-28T22:24:15+08:00">2019-04-28</time>
+              <time title="创建时间：2019-06-12 09:56:26 / 修改时间：18:02:16" itemprop="dateCreated datePublished" datetime="2019-06-12T09:56:26+08:00">2019-06-12</time>
             
 
             
@@ -417,7 +417,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/硬件/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL数据库学习/" itemprop="url" rel="index"><span itemprop="name">MySQL数据库学习</span></a></span>
 
                 
                 
@@ -459,20 +459,19 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read the blog.">
-    <label for="pass">Please enter the password to read the blog.</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-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
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <h3 id="Linux上安装MySQL"><a href="#Linux上安装MySQL" class="headerlink" title="Linux上安装MySQL"></a>Linux上安装MySQL</h3><p>安装前，我们可以检测系统是否自带安装 MySQL:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure></p>
+<p>如果系统有安装，那可以选择进行卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式 </span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### Centos7安装 MySQL：</span></span><br><span class="line">Centos7 系统下使用 yum 命令安装 MySQL，需要注意的是 CentOS 7 版本中 MySQL数据库已从默认的程序列表中移除，所以在安装前我们需要先去官网下载 Yum 资源包，下载地址为：[https://dev.mysql.com/downloads/repo/yum/](https://dev.mysql.com/downloads/repo/yum/)</span><br><span class="line">```bash</span><br><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm </span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure></p>
+<p>权限设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure></p>
+<p>初始化 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize</span><br></pre></td></tr></table></figure></p>
+<p>启动 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure></p>
+<p>查看 MySQL 运行状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status mysqld</span><br></pre></td></tr></table></figure></p>
+<p>mariadb数据库的相关命令是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb <span class="comment">#启动MariaDB </span></span><br><span class="line">systemctl stop mariadb <span class="comment">#停止MariaDB </span></span><br><span class="line">systemctl restart mariadb <span class="comment">#重启MariaDB </span></span><br><span class="line">systemctl <span class="built_in">enable</span> mariadb <span class="comment">#设置开机启动</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="验证-MySQL-安装"><a href="#验证-MySQL-安装" class="headerlink" title="验证 MySQL 安装"></a>验证 MySQL 安装</h3><p>使用 mysqladmin 工具来获取服务器状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysqladmin --version</span></span><br></pre></td></tr></table></figure></p>
+<p>linux上该命令将输出以下结果，该结果基于你的系统信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin Ver  8.23  Distrib  5.0.9-0,  <span class="keyword">for</span> redhat-linux-gnu on i386</span><br></pre></td></tr></table></figure></p>
+<p>如果以上命令执行后未输出任何信息，说明Mysql未安装成功。</p>
+<h3 id="Mysql安装后"><a href="#Mysql安装后" class="headerlink" title="Mysql安装后"></a>Mysql安装后</h3><p>Mysql安装成功后，默认的root用户密码为空，你可以使用以下命令来创建root用户的密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysqladmin -u root password "new_password";</span></span><br></pre></td></tr></table></figure></p>
+<p>连接到Mysql服务器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysql -u root -p Enter password:*******</span></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -526,8 +525,8 @@ U2FsdGVkX19mxdes0gR21JttI+YnAL5pEglyCxVWBdOPKR7RwnxkoNYEcwTzGu0TId36vI0wQGPBhOPR
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/28/Metasploit自定义模块、插件/" rel="next" title="Metasploit自定义模块、插件">
-                <i class="fa fa-chevron-left"></i> Metasploit自定义模块、插件
+              <a href="/2019/06/11/MySQL数据库初学（一）/" rel="next" title="MySQL数据库 初学（一）">
+                <i class="fa fa-chevron-left"></i> MySQL数据库 初学（一）
               </a>
             
           </div>
@@ -535,10 +534,6 @@ U2FsdGVkX19mxdes0gR21JttI+YnAL5pEglyCxVWBdOPKR7RwnxkoNYEcwTzGu0TId36vI0wQGPBhOPR
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/kali更新源配置/" rel="prev" title="kali更新源配置">
-                kali更新源配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,8 +577,17 @@ U2FsdGVkX19mxdes0gR21JttI+YnAL5pEglyCxVWBdOPKR7RwnxkoNYEcwTzGu0TId36vI0wQGPBhOPR
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -684,6 +688,23 @@ U2FsdGVkX19mxdes0gR21JttI+YnAL5pEglyCxVWBdOPKR7RwnxkoNYEcwTzGu0TId36vI0wQGPBhOPR
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux上安装MySQL"><span class="nav-number">1.</span> <span class="nav-text">Linux上安装MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证-MySQL-安装"><span class="nav-number">2.</span> <span class="nav-text">验证 MySQL 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql安装后"><span class="nav-number">3.</span> <span class="nav-text">Mysql安装后</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
