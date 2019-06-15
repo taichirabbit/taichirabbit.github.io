@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
+  <meta name="description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库安装（二）">
-<meta property="og:url" content="http://yoursite.com/2019/06/12/centos安装MySQL（二）/index.html">
+<meta property="og:title" content="MySQL数据库开启与关闭（三）">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭（三）/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
+<meta property="og:description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T10:15:22.219Z">
+<meta property="og:updated_time" content="2019-06-12T14:40:01.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库安装（二）">
-<meta name="twitter:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
+<meta name="twitter:title" content="MySQL数据库开启与关闭（三）">
+<meta name="twitter:description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/12/centos安装MySQL（二）/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭（三）/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>MySQL数据库安装（二） | 搞基笔记</title>
+  <title>MySQL数据库开启与关闭（三） | 搞基笔记</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/centos安装MySQL（二）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据库安装（二）
+          <h1 class="post-title" itemprop="name headline">MySQL数据库开启与关闭（三）
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:56:26 / 修改时间：18:15:22" itemprop="dateCreated datePublished" datetime="2019-06-12T09:56:26+08:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 22:33:25 / 修改时间：22:40:01" itemprop="dateCreated datePublished" datetime="2019-06-12T22:33:25+08:00">2019-06-12</time>
             
 
             
@@ -459,20 +459,15 @@
       
 
       
-        <h3 id="Linux上安装MySQL"><a href="#Linux上安装MySQL" class="headerlink" title="Linux上安装MySQL"></a>Linux上安装MySQL</h3><p>安装前，我们可以检测系统是否自带安装 MySQL:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure></p>
-<p>如果系统有安装，那可以选择进行卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式 </span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure></p>
-<h3 id="Centos7安装-MySQL："><a href="#Centos7安装-MySQL：" class="headerlink" title="Centos7安装 MySQL："></a>Centos7安装 MySQL：</h3><p>Centos7 系统下使用 yum 命令安装 MySQL，需要注意的是 CentOS 7 版本中 MySQL数据库已从默认的程序列表中移除，所以在安装前我们需要先去官网下载 Yum 资源包，下载地址为：<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a> <a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm </span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
-<p>权限设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure></p>
-<p>初始化 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize</span><br></pre></td></tr></table></figure></p>
-<p>启动 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure></p>
-<p>查看 MySQL 运行状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status mysqld</span><br></pre></td></tr></table></figure></p>
-<p>mariadb数据库的相关命令是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb <span class="comment">#启动MariaDB </span></span><br><span class="line">systemctl stop mariadb <span class="comment">#停止MariaDB </span></span><br><span class="line">systemctl restart mariadb <span class="comment">#重启MariaDB </span></span><br><span class="line">systemctl <span class="built_in">enable</span> mariadb <span class="comment">#设置开机启动</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="验证-MySQL-安装"><a href="#验证-MySQL-安装" class="headerlink" title="验证 MySQL 安装"></a>验证 MySQL 安装</h3><p>使用 mysqladmin 工具来获取服务器状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysqladmin --version</span></span><br></pre></td></tr></table></figure></p>
-<p>linux上该命令将输出以下结果，该结果基于你的系统信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin Ver  8.23  Distrib  5.0.9-0,  <span class="keyword">for</span> redhat-linux-gnu on i386</span><br></pre></td></tr></table></figure></p>
-<p>如果以上命令执行后未输出任何信息，说明Mysql未安装成功。</p>
-<h3 id="Mysql安装后"><a href="#Mysql安装后" class="headerlink" title="Mysql安装后"></a>Mysql安装后</h3><p>Mysql安装成功后，默认的root用户密码为空，你可以使用以下命令来创建root用户的密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysqladmin -u root password "new_password";</span></span><br></pre></td></tr></table></figure></p>
-<p>连接到Mysql服务器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysql -u root -p Enter password:*******</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h2><p>1、使用linux命令service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>3、使用 safe_mysqld 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">safe_mysqld&amp;</span><br></pre></td></tr></table></figure></p>
+<h2 id="停止方式"><a href="#停止方式" class="headerlink" title="停止方式"></a>停止方式</h2><p>1、使用 service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br></pre></td></tr></table></figure></p>
+<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld stop</span><br></pre></td></tr></table></figure></p>
+<p>3、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin shutdown</span><br></pre></td></tr></table></figure></p>
+<h2 id="重启方式"><a href="#重启方式" class="headerlink" title="重启方式"></a>重启方式</h2><p>1、使用 service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure></p>
+<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld restart</span><br></pre></td></tr></table></figure></p>
+<p>查看mysql端口是否已经使用，使用netstat -anp 命令查看服务器端口使用情况</p>
 
       
     </div>
@@ -527,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/11/MySQL数据库初学（一）/" rel="next" title="MySQL数据库 初学（一）">
-                <i class="fa fa-chevron-left"></i> MySQL数据库 初学（一）
+              <a href="/2019/06/12/MySQL数据centos安装（二）/" rel="next" title="MySQL数据库安装（二）">
+                <i class="fa fa-chevron-left"></i> MySQL数据库安装（二）
               </a>
             
           </div>
@@ -537,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/12/MySQL数据库开启与关闭/" rel="prev" title="MySQL数据库开启与关闭（三）">
-                MySQL数据库开启与关闭（三） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/13/MySQL数据库连接与管理（四）/" rel="prev" title="MySQL数据库连接与管理（四）">
+                MySQL数据库连接与管理（四） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -610,7 +605,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -639,7 +634,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -705,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux上安装MySQL"><span class="nav-number">1.</span> <span class="nav-text">Linux上安装MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos7安装-MySQL："><span class="nav-number">2.</span> <span class="nav-text">Centos7安装 MySQL：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证-MySQL-安装"><span class="nav-number">3.</span> <span class="nav-text">验证 MySQL 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql安装后"><span class="nav-number">4.</span> <span class="nav-text">Mysql安装后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动方式"><span class="nav-number">1.</span> <span class="nav-text">启动方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止方式"><span class="nav-number">2.</span> <span class="nav-text">停止方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启方式"><span class="nav-number">3.</span> <span class="nav-text">重启方式</span></a></li></ol></div>
             
 
           </div>
