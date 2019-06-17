@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
+  <meta name="description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库开启与关闭（三）">
-<meta property="og:url" content="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭（三）/index.html">
+<meta property="og:title" content="MySQL数据库创建与删除库（五）">
+<meta property="og:url" content="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
+<meta property="og:description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T14:40:01.841Z">
+<meta property="og:updated_time" content="2019-06-15T07:41:18.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库开启与关闭（三）">
-<meta name="twitter:description" content="启动方式1、使用linux命令service 启动：1service mysqld start 2、使用 mysqld 脚本启动：1/etc/inint.d/mysqld start 3、使用 safe_mysqld 启动：1safe_mysqld&amp;amp; 停止方式1、使用 service 启动：1service mysqld stop 2、使用 mysqld 脚本启动：1/etc/inint.">
+<meta name="twitter:title" content="MySQL数据库创建与删除库（五）">
+<meta name="twitter:description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭（三）/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>MySQL数据库开启与关闭（三） | 搞基笔记</title>
+  <title>MySQL数据库创建与删除库（五） | 搞基笔记</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/MySQL数据库开启与关闭（三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据库开启与关闭（三）
+          <h1 class="post-title" itemprop="name headline">MySQL数据库创建与删除库（五）
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 22:33:25 / 修改时间：22:40:01" itemprop="dateCreated datePublished" datetime="2019-06-12T22:33:25+08:00">2019-06-12</time>
+              <time title="创建时间：2019-06-15 15:34:37 / 修改时间：15:41:18" itemprop="dateCreated datePublished" datetime="2019-06-15T15:34:37+08:00">2019-06-15</time>
             
 
             
@@ -459,16 +459,10 @@
       
 
       
-        <h2 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h2><p>1、使用linux命令service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure></p>
-<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld start</span><br></pre></td></tr></table></figure></p>
-<p>3、使用 safe_mysqld 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">safe_mysqld&amp;</span><br></pre></td></tr></table></figure></p>
-<h2 id="停止方式"><a href="#停止方式" class="headerlink" title="停止方式"></a>停止方式</h2><p>1、使用 service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br></pre></td></tr></table></figure></p>
-<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld stop</span><br></pre></td></tr></table></figure></p>
-<p>3、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin shutdown</span><br></pre></td></tr></table></figure></p>
-<h2 id="重启方式"><a href="#重启方式" class="headerlink" title="重启方式"></a>重启方式</h2><p>1、使用 service 启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure></p>
-<p>2、使用 mysqld 脚本启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/inint.d/mysqld restart</span><br></pre></td></tr></table></figure></p>
-<p>查看mysql端口是否已经使用，使用netstat -anp 命令查看服务器端口使用情况</p>
-
+        <h2 id="MySQL-创建数据库"><a href="#MySQL-创建数据库" class="headerlink" title="MySQL 创建数据库"></a>MySQL 创建数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 库名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database hello;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-删除数据库"><a href="#MySQL-删除数据库" class="headerlink" title="MySQL 删除数据库"></a>MySQL 删除数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 库名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop database hello;</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -522,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/12/MySQL数据centos安装（二）/" rel="next" title="MySQL数据库安装（二）">
-                <i class="fa fa-chevron-left"></i> MySQL数据库安装（二）
+              <a href="/2019/06/15/拒接服务介绍和DoS分类（一）/" rel="next" title="拒接服务介绍和DoS分类（一）">
+                <i class="fa fa-chevron-left"></i> 拒接服务介绍和DoS分类（一）
               </a>
             
           </div>
@@ -532,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/13/MySQL数据库连接与管理（四）/" rel="prev" title="MySQL数据库连接与管理（四）">
-                MySQL数据库连接与管理（四） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/16/MySQL数据库数据类型（六）/" rel="prev" title="MySQL数据库数据类型（六）">
+                MySQL数据库数据类型（六） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -702,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动方式"><span class="nav-number">1.</span> <span class="nav-text">启动方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止方式"><span class="nav-number">2.</span> <span class="nav-text">停止方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启方式"><span class="nav-number">3.</span> <span class="nav-text">重启方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-创建数据库"><span class="nav-number">1.</span> <span class="nav-text">MySQL 创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-删除数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL 删除数据库</span></a></li></ol></div>
             
 
           </div>
