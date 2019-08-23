@@ -96,17 +96,27 @@
 
 
 
-  <meta name="description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
+  <meta name="description" content="前言这个机顶盒是联通运营商赠的，所以里面有很多限制比如必须使用这个机器的宽带账号，要不然连不上网，30秒弹出一次认证界面，不可以安装第三方软件，一开始我把软件放到了SD卡准备插卡安装时，提示我禁止安装第三方软件。后来我就去百度了一下，发现有破解教程 破解教程找到成功的有两个破解教程  通过adb破解工具进行破解 通过usb转tttl线插到机顶盒板子上的开发商的接口上   我先试了第一种方法，并没有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库安装（二）">
-<meta property="og:url" content="http://yoursite.com/2019/06/12/MySQL数据centos安装（二）/index.html">
+<meta property="og:title" content="中兴机顶盒B860AV1.1破解">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/中兴机顶盒B860AV1-1破解/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
+<meta property="og:description" content="前言这个机顶盒是联通运营商赠的，所以里面有很多限制比如必须使用这个机器的宽带账号，要不然连不上网，30秒弹出一次认证界面，不可以安装第三方软件，一开始我把软件放到了SD卡准备插卡安装时，提示我禁止安装第三方软件。后来我就去百度了一下，发现有破解教程 破解教程找到成功的有两个破解教程  通过adb破解工具进行破解 通过usb转tttl线插到机顶盒板子上的开发商的接口上   我先试了第一种方法，并没有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T10:15:22.219Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/DrJXtpRn6eHBN7P.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/qKy4alFA2UhNvrp.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/OzGJU6V8dXP2uAB.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/jJG6VYRqk3Pc72u.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/Rk2UAOS6scP3ZDt.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/G81VczgHLD9QwCJ.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/S7WGMtpjrEDTyc8.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/Aq3E1rXCFMyBYnx.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/24/AU61NT4DMvGiOeP.png">
+<meta property="og:updated_time" content="2019-08-23T23:29:25.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库安装（二）">
-<meta name="twitter:description" content="Linux上安装MySQL安装前，我们可以检测系统是否自带安装 MySQL:1rpm -qa | grep mysql 如果系统有安装，那可以选择进行卸载12rpm -e mysql　　// 普通删除模式 rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除 Centos7安装 MySQL：Centos7 系">
+<meta name="twitter:title" content="中兴机顶盒B860AV1.1破解">
+<meta name="twitter:description" content="前言这个机顶盒是联通运营商赠的，所以里面有很多限制比如必须使用这个机器的宽带账号，要不然连不上网，30秒弹出一次认证界面，不可以安装第三方软件，一开始我把软件放到了SD卡准备插卡安装时，提示我禁止安装第三方软件。后来我就去百度了一下，发现有破解教程 破解教程找到成功的有两个破解教程  通过adb破解工具进行破解 通过usb转tttl线插到机顶盒板子上的开发商的接口上   我先试了第一种方法，并没有">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/24/DrJXtpRn6eHBN7P.png">
 
 
 
@@ -114,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/12/MySQL数据centos安装（二）/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/24/中兴机顶盒B860AV1-1破解/">
 
 
 
@@ -124,7 +134,7 @@
   };
 </script>
 
-  <title>MySQL数据库安装（二） | 搞基笔记</title>
+  <title>中兴机顶盒B860AV1.1破解 | 搞基笔记</title>
   
 
 
@@ -352,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/MySQL数据centos安装（二）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/中兴机顶盒B860AV1-1破解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据库安装（二）
+          <h1 class="post-title" itemprop="name headline">中兴机顶盒B860AV1.1破解
 
               
             
@@ -395,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:56:26 / 修改时间：18:15:22" itemprop="dateCreated datePublished" datetime="2019-06-12T09:56:26+08:00">2019-06-12</time>
+              <time title="创建时间：2019-08-24 06:34:42 / 修改时间：07:29:25" itemprop="dateCreated datePublished" datetime="2019-08-24T06:34:42+08:00">2019-08-24</time>
             
 
             
@@ -417,7 +427,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL数据库学习/" itemprop="url" rel="index"><span itemprop="name">MySQL数据库学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/搞机笔记/" itemprop="url" rel="index"><span itemprop="name">搞机笔记</span></a></span>
 
                 
                 
@@ -459,20 +469,49 @@
       
 
       
-        <h3 id="Linux上安装MySQL"><a href="#Linux上安装MySQL" class="headerlink" title="Linux上安装MySQL"></a>Linux上安装MySQL</h3><p>安装前，我们可以检测系统是否自带安装 MySQL:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure></p>
-<p>如果系统有安装，那可以选择进行卸载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式 </span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure></p>
-<h3 id="Centos7安装-MySQL："><a href="#Centos7安装-MySQL：" class="headerlink" title="Centos7安装 MySQL："></a>Centos7安装 MySQL：</h3><p>Centos7 系统下使用 yum 命令安装 MySQL，需要注意的是 CentOS 7 版本中 MySQL数据库已从默认的程序列表中移除，所以在安装前我们需要先去官网下载 Yum 资源包，下载地址为：<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a> <a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm </span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
-<p>权限设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure></p>
-<p>初始化 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize</span><br></pre></td></tr></table></figure></p>
-<p>启动 MySQL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure></p>
-<p>查看 MySQL 运行状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status mysqld</span><br></pre></td></tr></table></figure></p>
-<p>mariadb数据库的相关命令是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb <span class="comment">#启动MariaDB </span></span><br><span class="line">systemctl stop mariadb <span class="comment">#停止MariaDB </span></span><br><span class="line">systemctl restart mariadb <span class="comment">#重启MariaDB </span></span><br><span class="line">systemctl <span class="built_in">enable</span> mariadb <span class="comment">#设置开机启动</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="验证-MySQL-安装"><a href="#验证-MySQL-安装" class="headerlink" title="验证 MySQL 安装"></a>验证 MySQL 安装</h3><p>使用 mysqladmin 工具来获取服务器状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysqladmin --version</span></span><br></pre></td></tr></table></figure></p>
-<p>linux上该命令将输出以下结果，该结果基于你的系统信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin Ver  8.23  Distrib  5.0.9-0,  <span class="keyword">for</span> redhat-linux-gnu on i386</span><br></pre></td></tr></table></figure></p>
-<p>如果以上命令执行后未输出任何信息，说明Mysql未安装成功。</p>
-<h3 id="Mysql安装后"><a href="#Mysql安装后" class="headerlink" title="Mysql安装后"></a>Mysql安装后</h3><p>Mysql安装成功后，默认的root用户密码为空，你可以使用以下命令来创建root用户的密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysqladmin -u root password "new_password";</span></span><br></pre></td></tr></table></figure></p>
-<p>连接到Mysql服务器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host]<span class="comment"># mysql -u root -p Enter password:*******</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个机顶盒是联通运营商赠的，所以里面有很多限制比如必须使用这个机器的宽带账号，要不然连不上网，30秒弹出一次认证界面，不可以安装第三方软件，一开始我把软件放到了SD卡准备插卡安装时，提示我禁止安装第三方软件。后来我就去百度了一下，发现有破解教程</p>
+<h2 id="破解教程"><a href="#破解教程" class="headerlink" title="破解教程"></a>破解教程</h2><p>找到成功的有两个破解教程</p>
+<ol>
+<li>通过adb破解工具进行破解</li>
+<li>通过usb转tttl线插到机顶盒板子上的开发商的接口上</li>
+</ol>
+<ul>
+<li>我先试了第一种方法，并没有成功，可能是开发商修补了漏洞</li>
+<li>只能使用第二种方法了，在淘宝上买了USBTOTTL(8块大洋)</li>
+</ul>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ol>
+<li>购买TTL线后，向店家要一个相应的驱动软件</li>
+<li>U盘一个，用来储存当贝市场和当贝桌面，将这两个软件下载拷贝至U盘中，并将文件名改为“dangbei1”和“dangbei2”<br>当贝市场下载地址：<a href="http://app.znds.com/update/dangbeimarket.apk" target="_blank" rel="noopener">http://app.znds.com/update/dangbeimarket.apk</a></li>
+</ol>
+<p>当贝桌面下载地址：<a href="http://www.dangbei.com/zhuomian/" target="_blank" rel="noopener">http://www.dangbei.com/zhuomian/</a></p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ol>
+<li>首先将机顶盒机器后盖打开，需要用螺丝刀等工具撬开后拧下螺丝取出主板;<br><img src="https://i.loli.net/2019/08/24/DrJXtpRn6eHBN7P.png" alt></li>
+<li>准备开始用USB转TTL线接线，</li>
+<li><p><img src="https://i.loli.net/2019/08/24/qKy4alFA2UhNvrp.png" alt><br>将TTL线的GND接2号口，RX线接5号口，TX线接6号口<br><img src="https://i.loli.net/2019/08/24/OzGJU6V8dXP2uAB.png" alt><br><img src="https://i.loli.net/2019/08/24/jJG6VYRqk3Pc72u.png" alt><br><strong>注意：如果稍后不能跑码的话，就将5、6接口上的线调换位置，如果还是无法跑码，就将接线顺序整体调换，意思就是反转过来重新接！！</strong></p>
+</li>
+<li><p>将USB接口插到电脑上后，安装店家给你的驱动软件，接着需要调试一些参数，右键我的电脑——属性——设备管理器——端口——COM”X”（X就是最后位数字）——属性——端口设置——改为“115200”——确定；<br><img src="https://i.loli.net/2019/08/24/Rk2UAOS6scP3ZDt.png" alt></p>
+</li>
+<li><p>打开之前下载好的“PUTTY”按图中的顺序设置即可，COM后面的数字按照自己电脑的端口号输入即可，在这里记得把U盘插到机顶盒的USB接口上；<br><img src="https://i.loli.net/2019/08/24/G81VczgHLD9QwCJ.png" alt></p>
+</li>
+<li><p>接着将盒子的盒子电源接通，通电开始跑码，如果没有跑码，注意：就将5、6接口上的线调换位置，如果还是无法跑码，就将接线顺序整体调换，意思就是整体反转过来重新接，线的顺序也要按照上述重新排序；**</p>
+</li>
+<li><p>成功跑码后开始输入代码，直接复制下述代码到“PUTTY”中，每输入一行按一下回车；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">start adbd </span><br><span class="line">注释：打开adb**</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看U盘路径<br><img src="https://i.loli.net/2019/08/24/S7WGMtpjrEDTyc8.png" alt></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>红线标出的就是U盘路径<br><img src="https://i.loli.net/2019/08/24/Aq3E1rXCFMyBYnx.png" alt><br><strong>注：红线标出的U盘路径可能与你输入df后的不相符，要以当前设备的路径为准，至于如何查看，可以从U盘大小看出来，比如上图中sda1后面的数字，U盘是3.8G。</strong></p>
+</li>
+<li>进入u盘 ,复制当贝市场和当贝桌面到盒子应用中<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp dangbei1.apk /data/app</span><br><span class="line">cp dangbei2.apk /data/app</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/08/24/AU61NT4DMvGiOeP.png" alt></p>
+<ol start="10">
+<li>启动当贝桌面<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">am start com.dangbei.tvlauncher</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>ok，至此当贝市场和当贝桌面就安装成功了</strong></p>
 
       
     </div>
@@ -527,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/11/MySQL数据库初学（一）/" rel="next" title="MySQL数据库 初学（一）">
-                <i class="fa fa-chevron-left"></i> MySQL数据库 初学（一）
+              <a href="/2019/07/27/开源蜜罐搭建和使用/" rel="next" title="基于Docker的蜜罐平台搭建">
+                <i class="fa fa-chevron-left"></i> 基于Docker的蜜罐平台搭建
               </a>
             
           </div>
@@ -536,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/12/MySQL数据库开启与关闭（三）/" rel="prev" title="MySQL数据库开启与关闭（三）">
-                MySQL数据库开启与关闭（三） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -722,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux上安装MySQL"><span class="nav-number">1.</span> <span class="nav-text">Linux上安装MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos7安装-MySQL："><span class="nav-number">2.</span> <span class="nav-text">Centos7安装 MySQL：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证-MySQL-安装"><span class="nav-number">3.</span> <span class="nav-text">验证 MySQL 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql安装后"><span class="nav-number">4.</span> <span class="nav-text">Mysql安装后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解教程"><span class="nav-number">2.</span> <span class="nav-text">破解教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程"><span class="nav-number">2.2.</span> <span class="nav-text">教程</span></a></li></ol></li></ol></div>
             
 
           </div>
