@@ -96,17 +96,20 @@
 
 
 
-  <meta name="description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
+  <meta name="description" content="前言刚开学不久，上一届学生应该是校园网到期了，把电信的光猫路由器扔了，正好上楼梯在垃圾桶旁，我看到就捡走了，拿回去还可以做路由器有，拿回去才发现路由器的后台功能也就能改一个wifi的名字而已，一些路由器的基本功能都没有，后来我打算直接用ttl线刷固件，在网上搜他的型号时发现他还有一个超级用户，这个用户是为了安装宽带时用的，根据自己的经验和一些线索，找到了超级用户的用户名和密码，从而达到了自己想用的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库创建与删除库（五）">
-<meta property="og:url" content="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/index.html">
+<meta property="og:title" content="校园网的天翼网关获取超级用户">
+<meta property="og:url" content="http://yoursite.com/2019/10/26/校园网的天翼网关获取超级用户/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
+<meta property="og:description" content="前言刚开学不久，上一届学生应该是校园网到期了，把电信的光猫路由器扔了，正好上楼梯在垃圾桶旁，我看到就捡走了，拿回去还可以做路由器有，拿回去才发现路由器的后台功能也就能改一个wifi的名字而已，一些路由器的基本功能都没有，后来我打算直接用ttl线刷固件，在网上搜他的型号时发现他还有一个超级用户，这个用户是为了安装宽带时用的，根据自己的经验和一些线索，找到了超级用户的用户名和密码，从而达到了自己想用的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T07:41:18.436Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/26/8nYykGXOFmiRUa3.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/26/u2rhSWvPXs3ziqc.png">
+<meta property="og:updated_time" content="2019-10-26T05:43:00.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库创建与删除库（五）">
-<meta name="twitter:description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
+<meta name="twitter:title" content="校园网的天翼网关获取超级用户">
+<meta name="twitter:description" content="前言刚开学不久，上一届学生应该是校园网到期了，把电信的光猫路由器扔了，正好上楼梯在垃圾桶旁，我看到就捡走了，拿回去还可以做路由器有，拿回去才发现路由器的后台功能也就能改一个wifi的名字而已，一些路由器的基本功能都没有，后来我打算直接用ttl线刷固件，在网上搜他的型号时发现他还有一个超级用户，这个用户是为了安装宽带时用的，根据自己的经验和一些线索，找到了超级用户的用户名和密码，从而达到了自己想用的">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/26/8nYykGXOFmiRUa3.png">
 
 
 
@@ -114,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/26/校园网的天翼网关获取超级用户/">
 
 
 
@@ -124,7 +127,7 @@
   };
 </script>
 
-  <title>MySQL数据库创建与删除库（五） | 搞基笔记</title>
+  <title>校园网的天翼网关获取超级用户 | 搞基笔记</title>
   
 
 
@@ -352,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/26/校园网的天翼网关获取超级用户/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据库创建与删除库（五）
+          <h1 class="post-title" itemprop="name headline">校园网的天翼网关获取超级用户
 
               
             
@@ -395,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-06-15 15:34:37 / 修改时间：15:41:18" itemprop="dateCreated datePublished" datetime="2019-06-15T15:34:37+08:00">2019-06-15</time>
+              <time title="创建时间：2019-10-26 11:44:29 / 修改时间：13:43:00" itemprop="dateCreated datePublished" datetime="2019-10-26T11:44:29+08:00">2019-10-26</time>
             
 
             
@@ -417,7 +420,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL数据库学习/" itemprop="url" rel="index"><span itemprop="name">MySQL数据库学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/搞机笔记/" itemprop="url" rel="index"><span itemprop="name">搞机笔记</span></a></span>
 
                 
                 
@@ -459,10 +462,24 @@
       
 
       
-        <h2 id="MySQL-创建数据库"><a href="#MySQL-创建数据库" class="headerlink" title="MySQL 创建数据库"></a>MySQL 创建数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 库名;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database hello;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-删除数据库"><a href="#MySQL-删除数据库" class="headerlink" title="MySQL 删除数据库"></a>MySQL 删除数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 库名;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop database hello;</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>刚开学不久，上一届学生应该是校园网到期了，把电信的光猫路由器扔了，正好上楼梯在垃圾桶旁，我看到就捡走了，拿回去还可以做路由器有，拿回去才发现路由器的后台功能也就能改一个wifi的名字而已，一些路由器的基本功能都没有，后来我打算直接用ttl线刷固件，在网上搜他的型号时发现他还有一个超级用户，这个用户是为了安装宽带时用的，根据自己的经验和一些线索，找到了超级用户的用户名和密码，从而达到了自己想用的功能<br><img src="https://i.loli.net/2019/10/26/8nYykGXOFmiRUa3.png" alt></p>
+<h2 id="破解步骤"><a href="#破解步骤" class="headerlink" title="破解步骤"></a>破解步骤</h2><ol>
+<li><p>根据设备型号HG221GS，上网查找资料，参考网上的方法，输入：<a href="http://192.168.1.1:8080/cgi-bin/baseinfoSet.cgi" target="_blank" rel="noopener">http://192.168.1.1:8080/cgi-bin/baseinfoSet.cgi</a></p>
+</li>
+<li><p>打开后找到关键信息</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"baseinfoSet_TELECOMACCOUNT"</span>:<span class="string">"telecomadmin"</span>,</span><br><span class="line">	   <span class="string">"baseinfoSet_TELECOMPASSWORD"</span>:<span class="string">"114&amp;73&amp;55&amp;110&amp;69&amp;37&amp;53&amp;113&amp;"</span>,</span><br><span class="line">	   <span class="string">"baseinfoSet_USERACCOUNT"</span>:<span class="string">"useradmin"</span>,</span><br><span class="line">	   <span class="string">"baseinfoSet_USERPASSWORD"</span>:<span class="string">"106&amp;110&amp;117&amp;122&amp;50&amp;"</span>,</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/10/26/u2rhSWvPXs3ziqc.png" alt></p>
+<ol start="3">
+<li>通过观察9CD2H与57&amp;71&amp;72&amp;50&amp;76&amp;的对应关系（ASCII码），进行解码，如下所示：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">code=<span class="string">'114&amp;73&amp;55&amp;110&amp;69&amp;37&amp;53&amp;113&amp;'</span>[:-1] <span class="comment"># "baseinfoSet_TELECOMPASSWORD":"114&amp;73&amp;55&amp;110&amp;69&amp;37&amp;53&amp;113&amp;"</span></span><br><span class="line">    list=map(int,code.split(<span class="string">'&amp;'</span>))</span><br><span class="line">    result=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">    <span class="keyword">if</span> i &gt; 57:</span><br><span class="line">    i-=4</span><br><span class="line">    result.append(chr(i))</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">''</span>.join(result)) <span class="comment"># output password:nE7jA%5m</span></span><br></pre></td></tr></table></figure>
+<p>找个python的线上编辑器，运行上述代码，得到默认密码nE7jA%5m</p>
+<ol start="4">
+<li>输入超级管理员账号：telecomadmin 密码： nE7jA%5m 登陆成功</li>
+</ol>
+
       
     </div>
 
@@ -516,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/15/拒接服务介绍和DoS分类（一）/" rel="next" title="拒接服务介绍和DoS分类（一）">
-                <i class="fa fa-chevron-left"></i> 拒接服务介绍和DoS分类（一）
+              <a href="/2019/10/26/Git信息泄露/" rel="next" title="Git信息泄露">
+                <i class="fa fa-chevron-left"></i> Git信息泄露
               </a>
             
           </div>
@@ -525,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/16/MySQL数据库数据类型（六）/" rel="prev" title="MySQL数据库数据类型（六）">
-                MySQL数据库数据类型（六） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -715,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-创建数据库"><span class="nav-number">1.</span> <span class="nav-text">MySQL 创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-删除数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL 删除数据库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解步骤"><span class="nav-number">2.</span> <span class="nav-text">破解步骤</span></a></li></ol></div>
             
 
           </div>

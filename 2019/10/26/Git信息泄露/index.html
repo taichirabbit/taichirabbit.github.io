@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
+  <meta name="description" content="前言git是一个开源分布式版本控制系统，可以有效，高速的处理从很小到非常大的文件项目版本管理 官网：https://git-scm.com 可以通过git init创建一个仓库Git信息泄露的原理 通过泄露的.git文件夹下的文件，可以还原重建工程源码。 新建仓库下会有.git/index 文件，解析.git/index 文件，找到工程中所有的文件名为：（文件sha1） 可以在.git/index">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库创建与删除库（五）">
-<meta property="og:url" content="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/index.html">
+<meta property="og:title" content="Git信息泄露">
+<meta property="og:url" content="http://yoursite.com/2019/10/26/Git信息泄露/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
+<meta property="og:description" content="前言git是一个开源分布式版本控制系统，可以有效，高速的处理从很小到非常大的文件项目版本管理 官网：https://git-scm.com 可以通过git init创建一个仓库Git信息泄露的原理 通过泄露的.git文件夹下的文件，可以还原重建工程源码。 新建仓库下会有.git/index 文件，解析.git/index 文件，找到工程中所有的文件名为：（文件sha1） 可以在.git/index">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T07:41:18.436Z">
+<meta property="og:updated_time" content="2019-10-26T03:41:57.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库创建与删除库（五）">
-<meta name="twitter:description" content="MySQL 创建数据库1create database 库名; 12mysql&amp;gt; create database hello;Query OK, 1 row affected (0.00 sec) MySQL 删除数据库1drop database 库名; 12mysql&amp;gt; drop database hello;Query OK, 0 rows affected (0.16 sec)">
+<meta name="twitter:title" content="Git信息泄露">
+<meta name="twitter:description" content="前言git是一个开源分布式版本控制系统，可以有效，高速的处理从很小到非常大的文件项目版本管理 官网：https://git-scm.com 可以通过git init创建一个仓库Git信息泄露的原理 通过泄露的.git文件夹下的文件，可以还原重建工程源码。 新建仓库下会有.git/index 文件，解析.git/index 文件，找到工程中所有的文件名为：（文件sha1） 可以在.git/index">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/26/Git信息泄露/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>MySQL数据库创建与删除库（五） | 搞基笔记</title>
+  <title>Git信息泄露 | 搞基笔记</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/MySQL数据库创建与删除库(五）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/26/Git信息泄露/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="rabbit">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据库创建与删除库（五）
+          <h1 class="post-title" itemprop="name headline">Git信息泄露
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-06-15 15:34:37 / 修改时间：15:41:18" itemprop="dateCreated datePublished" datetime="2019-06-15T15:34:37+08:00">2019-06-15</time>
+              <time title="创建时间：2019-10-26 11:10:21 / 修改时间：11:41:57" itemprop="dateCreated datePublished" datetime="2019-10-26T11:10:21+08:00">2019-10-26</time>
             
 
             
@@ -417,7 +417,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL数据库学习/" itemprop="url" rel="index"><span itemprop="name">MySQL数据库学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
 
                 
                 
@@ -459,10 +459,18 @@
       
 
       
-        <h2 id="MySQL-创建数据库"><a href="#MySQL-创建数据库" class="headerlink" title="MySQL 创建数据库"></a>MySQL 创建数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 库名;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database hello;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-删除数据库"><a href="#MySQL-删除数据库" class="headerlink" title="MySQL 删除数据库"></a>MySQL 删除数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 库名;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop database hello;</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>git是一个开源分布式版本控制系统，可以有效，高速的处理从很小到非常大的文件项目版本管理</p>
+<h5 id="官网：https-git-scm-com-可以通过git-init创建一个仓库"><a href="#官网：https-git-scm-com-可以通过git-init创建一个仓库" class="headerlink" title="官网：https://git-scm.com 可以通过git init创建一个仓库"></a>官网：<a href="https://git-scm.com" target="_blank" rel="noopener">https://git-scm.com</a> 可以通过git init创建一个仓库</h5><h2 id="Git信息泄露的原理"><a href="#Git信息泄露的原理" class="headerlink" title="Git信息泄露的原理"></a>Git信息泄露的原理</h2><ul>
+<li>通过泄露的.git文件夹下的文件，可以还原重建工程源码。</li>
+<li>新建仓库下会有.git/index 文件，解析.git/index 文件，找到工程中所有的文件名为：（文件sha1）</li>
+<li>可以在.git/index文件夹下下载对应的文件</li>
+<li>zlib解压文件，按原始的目录结构写入源代码</li>
+</ul>
+<p>拿到源代码后，可以进一步进行代码审计，从而发现安全漏洞</p>
+<h2 id="Git实验环境搭建"><a href="#Git实验环境搭建" class="headerlink" title="Git实验环境搭建"></a>Git实验环境搭建</h2><p>将git init 目录下的内容部署到http服务器上，保留，git目录。git add 文件名、git commit -m “版本信息”</p>
+<h2 id="Git信息泄露利用"><a href="#Git信息泄露利用" class="headerlink" title="Git信息泄露利用"></a>Git信息泄露利用</h2><p>下载GitHack<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/lijiejie/GitHack.git</span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GitHack.py  http://网址/.git</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -516,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/15/拒接服务介绍和DoS分类（一）/" rel="next" title="拒接服务介绍和DoS分类（一）">
-                <i class="fa fa-chevron-left"></i> 拒接服务介绍和DoS分类（一）
+              <a href="/2019/10/09/CTF入门文件合并/" rel="next" title="CTF入门文件合并">
+                <i class="fa fa-chevron-left"></i> CTF入门文件合并
               </a>
             
           </div>
@@ -526,8 +534,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/16/MySQL数据库数据类型（六）/" rel="prev" title="MySQL数据库数据类型（六）">
-                MySQL数据库数据类型（六） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/26/校园网的天翼网关获取超级用户/" rel="prev" title="校园网的天翼网关获取超级用户">
+                校园网的天翼网关获取超级用户 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -715,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-创建数据库"><span class="nav-number">1.</span> <span class="nav-text">MySQL 创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-删除数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL 删除数据库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#官网：https-git-scm-com-可以通过git-init创建一个仓库"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">官网：https://git-scm.com 可以通过git init创建一个仓库</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Git信息泄露的原理"><span class="nav-number">2.</span> <span class="nav-text">Git信息泄露的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git实验环境搭建"><span class="nav-number">3.</span> <span class="nav-text">Git实验环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git信息泄露利用"><span class="nav-number">4.</span> <span class="nav-text">Git信息泄露利用</span></a></li></div>
             
 
           </div>
