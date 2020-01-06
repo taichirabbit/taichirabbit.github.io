@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="centos7修改ip地址 ifconfig 找出网卡的名称  查看网卡为ens33 /etc/sysconfig/network-scripts/ ``` 查看123456789101112131415161718192021222324253. vim ifcfg-ens334.  ```bash TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOO">
+  <meta name="description" content="centos7修改ip地址 ifconfig 找出网卡的名称  查看网卡为ens33  cd /etc/sysconfig/network-scripts/   —- 查看   vim ifcfg-ens33   12345678910111213141516171819202122TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=non">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7 debian9 ubuntu16.04 修改IP及DNS">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/修改IP及DNS/index.html">
 <meta property="og:site_name" content="搞基笔记">
-<meta property="og:description" content="centos7修改ip地址 ifconfig 找出网卡的名称  查看网卡为ens33 /etc/sysconfig/network-scripts/ ``` 查看123456789101112131415161718192021222324253. vim ifcfg-ens334.  ```bash TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOO">
+<meta property="og:description" content="centos7修改ip地址 ifconfig 找出网卡的名称  查看网卡为ens33  cd /etc/sysconfig/network-scripts/   —- 查看   vim ifcfg-ens33   12345678910111213141516171819202122TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=non">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T14:28:38.892Z">
+<meta property="og:updated_time" content="2020-01-06T00:59:41.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7 debian9 ubuntu16.04 修改IP及DNS">
-<meta name="twitter:description" content="centos7修改ip地址 ifconfig 找出网卡的名称  查看网卡为ens33 /etc/sysconfig/network-scripts/ ``` 查看123456789101112131415161718192021222324253. vim ifcfg-ens334.  ```bash TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOO">
+<meta name="twitter:description" content="centos7修改ip地址 ifconfig 找出网卡的名称  查看网卡为ens33  cd /etc/sysconfig/network-scripts/   —- 查看   vim ifcfg-ens33   12345678910111213141516171819202122TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=non">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 22:28:38" itemprop="dateModified" datetime="2019-07-16T22:28:38+08:00">2019-07-16</time>
+                <time title="修改时间：2020-01-06 08:59:41" itemprop="dateModified" datetime="2020-01-06T08:59:41+08:00">2020-01-06</time>
               
             
           </span>
@@ -473,11 +473,25 @@
       
         <h1 id="centos7"><a href="#centos7" class="headerlink" title="centos7"></a>centos7</h1><h3 id="修改ip地址"><a href="#修改ip地址" class="headerlink" title="修改ip地址"></a>修改ip地址</h3><ol>
 <li>ifconfig 找出网卡的名称  查看网卡为ens33</li>
-<li><figure class="highlight plain"><figcaption><span>/etc/sysconfig/network-scripts/ ``` 查看</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">3. vim ifcfg-ens33</span><br><span class="line">4. </span><br><span class="line"> ```bash </span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=none</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=c886ea74-29f0-487c-9947-34345f1d3623</span><br><span class="line">DEVICE=ens33</span><br><span class="line">#设置开机自启</span><br><span class="line">ONBOOT=yes</span><br><span class="line">#配置IP地址信息</span><br><span class="line">IPADDR=192.168.100.90</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.100.1</span><br><span class="line">#取消NetworkManager管理</span><br><span class="line">NM_CONTROLLED=no</span><br></pre></td></tr></table></figure>
+<li><blockquote>
+<p>cd /etc/sysconfig/network-scripts/   —- 查看</p>
+</blockquote>
 </li>
+<li>vim ifcfg-ens33</li>
 </ol>
-<h3 id="重启网络服务"><a href="#重启网络服务" class="headerlink" title="重启网络服务"></a>重启网络服务</h3><figure class="highlight plain"><figcaption><span>restart network ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 配置DNS</span><br><span class="line">``` vim /etc/NetworkManager/NetworkManager.conf</span><br></pre></td></tr></table></figure>
-<h3 id="在-main-中添加"><a href="#在-main-中添加" class="headerlink" title="在[main]中添加"></a>在[main]中添加</h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## 修改resolv.conf配置文件</span><br><span class="line"></span><br><span class="line">``` vim /etc/resolv.conf</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=none</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=c886ea74-29f0-487c-9947-34345f1d3623</span><br><span class="line">DEVICE=ens33</span><br><span class="line"><span class="comment">#设置开机自启</span></span><br><span class="line">ONBOOT=yes</span><br><span class="line"><span class="comment">#配置IP地址信息</span></span><br><span class="line">IPADDR=192.168.100.90</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.100.1</span><br><span class="line"><span class="comment">#取消NetworkManager管理</span></span><br><span class="line">NM_CONTROLLED=no</span><br></pre></td></tr></table></figure>
+<h3 id="重启网络服务"><a href="#重启网络服务" class="headerlink" title="重启网络服务"></a>重启网络服务</h3><blockquote>
+<p>systemctl restart network</p>
+</blockquote>
+<h3 id="配置DNS"><a href="#配置DNS" class="headerlink" title="配置DNS"></a>配置DNS</h3><blockquote>
+<p>vim /etc/NetworkManager/NetworkManager.conf</p>
+</blockquote>
+<h3 id="在-main-中添加"><a href="#在-main-中添加" class="headerlink" title="在[main]中添加"></a>在[main]中添加</h3><blockquote>
+<p>dns=no</p>
+</blockquote>
+<h2 id="修改resolv-conf配置文件"><a href="#修改resolv-conf配置文件" class="headerlink" title="修改resolv.conf配置文件"></a>修改resolv.conf配置文件</h2><blockquote>
+<p>vim /etc/resolv.conf</p>
+</blockquote>
 <h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#主DNS服务器</span></span><br><span class="line">nameserver 218.85.157.99</span><br><span class="line"><span class="comment">#备DNS服务器</span></span><br><span class="line">nameserver 114.114.114.114</span><br></pre></td></tr></table></figure>
 <h3 id="重启NetworkManager"><a href="#重启NetworkManager" class="headerlink" title="重启NetworkManager"></a>重启NetworkManager</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart NetworkManager</span><br></pre></td></tr></table></figure>
 <h1 id="debian9"><a href="#debian9" class="headerlink" title="debian9"></a>debian9</h1><h3 id="修改IP地址："><a href="#修改IP地址：" class="headerlink" title="修改IP地址："></a>修改IP地址：</h3><ol>
@@ -664,7 +678,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -701,7 +715,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -780,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#centos7"><span class="nav-number">1.</span> <span class="nav-text">centos7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改ip地址"><span class="nav-number">1.0.1.</span> <span class="nav-text">修改ip地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启网络服务"><span class="nav-number">1.0.2.</span> <span class="nav-text">重启网络服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-main-中添加"><span class="nav-number">1.0.3.</span> <span class="nav-text">在[main]中添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">1.0.4.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启NetworkManager"><span class="nav-number">1.0.5.</span> <span class="nav-text">重启NetworkManager</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#debian9"><span class="nav-number">2.</span> <span class="nav-text">debian9</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改IP地址："><span class="nav-number">2.0.1.</span> <span class="nav-text">修改IP地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改DNS"><span class="nav-number">2.0.2.</span> <span class="nav-text">修改DNS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ubuntu16-04"><span class="nav-number">3.</span> <span class="nav-text">ubuntu16.04</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改IP地址"><span class="nav-number">3.0.1.</span> <span class="nav-text">修改IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改DNS-1"><span class="nav-number">3.0.2.</span> <span class="nav-text">修改DNS</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#centos7"><span class="nav-number">1.</span> <span class="nav-text">centos7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改ip地址"><span class="nav-number">1.0.1.</span> <span class="nav-text">修改ip地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启网络服务"><span class="nav-number">1.0.2.</span> <span class="nav-text">重启网络服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置DNS"><span class="nav-number">1.0.3.</span> <span class="nav-text">配置DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-main-中添加"><span class="nav-number">1.0.4.</span> <span class="nav-text">在[main]中添加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改resolv-conf配置文件"><span class="nav-number">1.1.</span> <span class="nav-text">修改resolv.conf配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">1.1.1.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启NetworkManager"><span class="nav-number">1.1.2.</span> <span class="nav-text">重启NetworkManager</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#debian9"><span class="nav-number">2.</span> <span class="nav-text">debian9</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改IP地址："><span class="nav-number">2.0.1.</span> <span class="nav-text">修改IP地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改DNS"><span class="nav-number">2.0.2.</span> <span class="nav-text">修改DNS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ubuntu16-04"><span class="nav-number">3.</span> <span class="nav-text">ubuntu16.04</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改IP地址"><span class="nav-number">3.0.1.</span> <span class="nav-text">修改IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改DNS-1"><span class="nav-number">3.0.2.</span> <span class="nav-text">修改DNS</span></a></li></ol></li></div>
             
 
           </div>
@@ -801,7 +817,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
